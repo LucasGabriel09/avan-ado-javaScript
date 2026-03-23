@@ -1,0 +1,53 @@
+<form onsubmit="cad2(event)">
+<input type="text" id="n">
+<div id="e1"></div>
+
+<input type="text" id="em">
+<div id="e2"></div>
+
+<input type="number" id="id">
+<div id="e3"></div>
+
+<input type="password" id="s">
+<div id="e4"></div>
+
+<input type="password" id="cs">
+<div id="e5"></div>
+
+<button>Enviar</button>
+</form>
+
+<div id="ok"></div>
+
+<script>
+function cad2(e){
+    e.preventDefault()
+
+    let n=document.getElementById("n").value
+    let em=document.getElementById("em").value
+    let id=document.getElementById("id").value
+    let s=document.getElementById("s").value
+    let cs=document.getElementById("cs").value
+
+    let ok=true
+
+    if(n==""){document.getElementById("e1").innerText="Obrigatório";ok=false}
+    else document.getElementById("e1").innerText=""
+
+    if(!em.includes("@")){document.getElementById("e2").innerText="Email inválido";ok=false}
+    else document.getElementById("e2").innerText=""
+
+    if(id<18){document.getElementById("e3").innerText="Maior de idade";ok=false}
+    else document.getElementById("e3").innerText=""
+
+    if(s.length<8){document.getElementById("e4").innerText="Min 8";ok=false}
+    else document.getElementById("e4").innerText=""
+
+    if(s!=cs){document.getElementById("e5").innerText="Diferente";ok=false}
+    else document.getElementById("e5").innerText=""
+
+    if(ok){
+        document.getElementById("ok").innerText="Sucesso"
+    }
+}
+</script>
