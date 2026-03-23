@@ -1,0 +1,10 @@
+<button onclick="clicou()">Gostei 👍</button>
+<div id="contador">Total de cliques: 0</div>
+
+<script>
+let total = 0
+function clicou(){
+    total++
+    document.getElementById("contador").innerText = "Total de cliques: " + total
+}
+</script>
