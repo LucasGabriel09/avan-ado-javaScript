@@ -1,0 +1,26 @@
+<button onclick="v(1)">A</button>
+<button onclick="v(2)">B</button>
+<button onclick="v(3)">C</button>
+
+<div id="resV"></div>
+<div id="ganha"></div>
+
+<script>
+let a=0,b=0,c=0
+
+function v(x){
+    if(x==1)a++
+    if(x==2)b++
+    if(x==3)c++
+
+    document.getElementById("resV").innerText="A:"+a+" B:"+b+" C:"+c
+
+    if(a>b && a>c){
+        document.getElementById("ganha").innerText="A ganhando"
+    } else if(b>a && b>c){
+        document.getElementById("ganha").innerText="B ganhando"
+    } else if(c>a && c>b){
+        document.getElementById("ganha").innerText="C ganhando"
+    }
+}
+</script>
