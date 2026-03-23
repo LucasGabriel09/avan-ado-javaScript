@@ -1,0 +1,38 @@
+<input type="number" id="numeroTabuada">
+<button onclick="gerarTabuada()">Gerar</button>
+<ul id="tabuada"></ul>
+
+<script>
+function gerarTabuada(){
+    let num = document.getElementById("numeroTabuada").value
+    let lista = document.getElementById("tabuada")
+    lista.innerHTML = ""
+
+    for(let i=1; i<=10; i++){
+        let li = document.createElement("li")
+        li.innerText = num + " x " + i + " = " + (num*i)
+        lista.appendChild(li)
+    }
+}
+</script>
+
+<!-- 6. Missões -->
+<input type="text" id="missao">
+<button onclick="addMissao()">Adicionar</button>
+<ul id="listaMissoes"></ul>
+
+<script>
+function addMissao(){
+    let texto = document.getElementById("missao").value
+    let ul = document.getElementById("listaMissoes")
+
+    let li = document.createElement("li")
+    li.innerText = texto
+
+    li.onclick = function(){
+        li.style.textDecoration = "line-through"
+    }
+
+    ul.appendChild(li)
+}
+</script>
