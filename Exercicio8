@@ -1,0 +1,26 @@
+<input type="number" id="palpite">
+<button onclick="jogar()">Tentar</button>
+<div id="resJogo"></div>
+<div id="tent"></div>
+
+<script>
+let num = Math.floor(Math.random()*20)+1
+let t=0
+
+function jogar(){
+    let p=document.getElementById("palpite").value
+    t++
+
+    if(p>num){
+        document.getElementById("resJogo").innerText="Muito alto"
+    } else if(p<num){
+        document.getElementById("resJogo").innerText="Muito baixo"
+    } else {
+        document.getElementById("resJogo").innerText="Acertou!"
+        num=Math.floor(Math.random()*20)+1
+        t=0
+    }
+
+    document.getElementById("tent").innerText="Tentativas: "+t
+}
+</script>
