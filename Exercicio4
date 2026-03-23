@@ -1,0 +1,43 @@
+<input type="number" id="nota1">
+<input type="number" id="nota2">
+<button onclick="media()">Ver resultado</button>
+<div id="resMedia"></div>
+
+<script>
+function media(){
+    let n1 = Number(document.getElementById("nota1").value)
+    let n2 = Number(document.getElementById("nota2").value)
+    let m = (n1+n2)/2
+    let r = document.getElementById("resMedia")
+
+    if(m>=7){
+        r.innerText="Aprovado"
+        r.style.color="green"
+    } else if(m>=5){
+        r.innerText="Recuperação"
+        r.style.color="orange"
+    } else {
+        r.innerText="Reprovado"
+        r.style.color="red"
+    }
+}
+</script>
+
+<!-- 5. Tabuada -->
+<input type="number" id="numTab">
+<button onclick="tabuada()">Gerar</button>
+<ul id="listaTab"></ul>
+
+<script>
+function tabuada(){
+    let n = document.getElementById("numTab").value
+    let ul = document.getElementById("listaTab")
+    ul.innerHTML=""
+
+    for(let i=1;i<=10;i++){
+        let li=document.createElement("li")
+        li.innerText = n+" x "+i+" = "+(n*i)
+        ul.appendChild(li)
+    }
+}
+</script>
