@@ -1,0 +1,30 @@
+<form onsubmit="validarCadastro(event)">
+    <input type="text" id="nome">
+    <div id="erroNome"></div>
+
+    <input type="text" id="email">
+    <div id="erroEmail"></div>
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+<script>
+function validarCadastro(e){
+    e.preventDefault()
+
+    let nome = document.getElementById("nome").value
+    let email = document.getElementById("email").value
+
+    if(nome == ""){
+        document.getElementById("erroNome").innerText = "Nome obrigatório"
+    } else {
+        document.getElementById("erroNome").innerText = ""
+    }
+
+    if(!email.includes("@")){
+        document.getElementById("erroEmail").innerText = "Email inválido"
+    } else {
+        document.getElementById("erroEmail").innerText = ""
+    }
+}
+</script>
